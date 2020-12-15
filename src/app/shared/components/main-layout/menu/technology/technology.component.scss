@@ -21,6 +21,10 @@ h2 {
   .modal-container {
     margin: 0 auto;
     position: relative;
+
+    img {
+      width: 100%;
+    }
   }
 
   .modal-container .modal-backdrop {
@@ -43,7 +47,8 @@ h2 {
   }
 
   .modal-image img {
-    width: 500px;
+    max-width: 500px;
+    width: 100%;
   }
 
   .modal-container #modal-toggle:checked {
@@ -71,12 +76,13 @@ h2 {
   .modal-container #modal-toggle:checked ~ .modal-backdrop .modal-content {
     display: flex;
     background-color: #fff;
-    max-width: 700px;
     width: 100%;
+    max-width: 565px;
     padding: 10px 20px;
     position: absolute;
-    left: calc(50% - 300px);
-    top: 3%;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
     border-radius: 5px;
     z-index: 999;
     pointer-events: auto;

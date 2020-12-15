@@ -7,12 +7,17 @@
     flex-direction: row;
     align-items: center;
     justify-content: space-between;
-    line-height: 6em;
     margin: 0 30px;
+    padding: 10px 0;
 
     .nav-inner {
       display: flex;
       align-items: baseline;
+      flex-wrap: wrap;
+
+      .logo {
+        padding-right: 10px;
+      }
 
       h2 {
         font-size: 30px;
@@ -20,10 +25,9 @@
       }
 
       .search{
-        padding-left: 20px;
 
         input {
-          width: 600px;
+          width: 300px;
           padding: 15px 20px;
           border-radius: 20px;
           border: none;
