@@ -1,0 +1,59 @@
+<h2>Animals</h2>
+
+<div class="container" *ngIf="Items">
+
+  <div class="row">
+    <div class="image" *ngFor="let item of Items">
+
+      <div class="modal-container">
+        <input id="modal-toggle" type="checkbox">
+        <img [lazyLoad]="item.cover_photo.urls.small" class="lazy-loading" alt="" />
+        <div class="modal-backdrop">
+          <div class="modal-content">
+            <div class="modal-image">
+              <img [lazyLoad]="item.cover_photo.urls.small" class="lazy-loading" alt="" />
+              <div class="add-to-links">
+                <a class="wishlist"></a>
+              </div>
+            </div>
+            <div class="info">
+              <div class="button-download">
+                <h4>Download:</h4>
+                <a [href]="item.cover_photo.links?.download  + '?force=true'">
+                  <mat-icon aria-hidden="false">cloud_download</mat-icon>
+                </a>
+              </div>
+              <div class="button-shared">
+                <h4>Share:</h4>
+
+                <ul class="flex">
+                  <li>
+                    <a [href]="'https://www.facebook.com/sharer/sharer.php?u=' + item.cover_photo.links?.html" target="_blank">
+                      <i class="icon icon-facebook"></i>
+                    </a>
+                  </li>
+                  <li>
+                    <a [href]="'http://twitter.com/share?text=' + item.cover_photo.links?.html" target="_blank">
+                      <i class="icon icon-twitter"></i>
+                    </a>
+                  </li>
+                  <li>
+                    <a [href]="'https://wa.me/?text=' + item.cover_photo.links?.html" target="_blank">
+                      <i class="icon icon-whatsapp"></i>
+                    </a>
+                  </li>
+                </ul>
+
+              </div>
+            </div>
+            <div class="add-to-links">
+              <a class="wishlist"></a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+</div>

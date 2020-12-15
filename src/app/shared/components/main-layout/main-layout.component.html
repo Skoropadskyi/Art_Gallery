@@ -1,0 +1,36 @@
+<div class="header">
+  <div class="nav">
+    <div class="nav-inner">
+      <div class="logo">
+        <h2>Art Gallety</h2>
+      </div>
+      <div class="search">
+        <input [formControl] ="queryField" type="text" placeholder="Search..." class="search"/>
+      </div>
+    </div>
+  </div>
+
+  <div class="nav-block">
+    <div class="example-button-row">
+      <button mat-button routerLink="/work-from-home">Work From Home</button>
+      <button mat-button routerLink="/technology">Technology</button>
+      <button mat-button routerLink="/travel">Travel</button>
+      <button mat-button routerLink="/nature">Nature</button>
+      <button mat-button routerLink="/film">Film</button>
+      <button mat-button routerLink="/current-events">Current Events</button>
+      <button mat-button routerLink="/business-work">Business & Work</button>
+      <button mat-button routerLink="/animals">Animals</button>
+    </div>
+  </div>
+</div>
+
+<div class="search-output">
+
+  <div *ngFor="let results of searchResults" class="filter-select-list">
+
+    <img src="{{results.urls.regular}}" alt="">
+
+  </div>
+</div>
+
+<router-outlet></router-outlet>

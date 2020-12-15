@@ -1,0 +1,137 @@
+h2 {
+  font-size: 38px;
+  font-weight: lighter;
+  text-align: center;
+  margin-top: 20px;
+}
+
+.row {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-around;
+
+  .image {
+    width: 100%;
+    max-width: 400px;
+    margin: 20px 0;
+  }
+
+  .modal-container {
+    margin: 0 auto;
+    position: relative;
+  }
+
+  .modal-container .modal-backdrop {
+    height: 0;
+    width: 0;
+    opacity: 0;
+    overflow: hidden;
+    transition: opacity 0.2s ease-in;
+  }
+
+  .modal-container #modal-toggle {
+    position: absolute;
+    left: 0;
+    top: 0;
+    height: 100%;
+    width: 100%;
+    margin: 0;
+    opacity: 0;
+    cursor: pointer;
+  }
+
+  .modal-image img {
+    width: 500px;
+  }
+
+  .modal-container #modal-toggle:checked {
+    width: 100vw;
+    height: 100vh;
+    position: fixed;
+    left: 0;
+    top: 0;
+    z-index: 9;
+    opacity: 0;
+  }
+
+  .modal-container #modal-toggle:checked ~ .modal-backdrop {
+    background-color: rgba(0, 0, 0, 0.7);
+    width: 100vw;
+    height: 100vh;
+    position: fixed;
+    left: 0;
+    top: 0;
+    z-index: 9;
+    pointer-events: none;
+    opacity: 1;
+  }
+
+  .modal-container #modal-toggle:checked ~ .modal-backdrop .modal-content {
+    display: flex;
+    background-color: #fff;
+    max-width: 700px;
+    width: 100%;
+    padding: 10px 20px;
+    position: absolute;
+    left: calc(50% - 300px);
+    top: 3%;
+    border-radius: 5px;
+    z-index: 999;
+    pointer-events: auto;
+    cursor: auto;
+    box-shadow: 0 3px 7px rgba(0, 0, 0, 0.6);
+  }
+
+  .info {
+    position: relative;
+    margin: auto;
+
+    .button-download {
+      display: flex;
+      margin-left: 15px;
+    }
+    .button-shared {
+      display: flex;
+      align-items: center;
+      margin-left: 15px;
+
+      ul {
+        list-style: none;
+        padding-left: 0;
+
+        li {
+          font-size: 24px;
+          margin-bottom: 20px;
+        }
+      }
+    }
+
+    a {
+      color: #333;
+      padding-left: 10px;
+      text-decoration: none;
+      }
+
+      mat-icon {
+        font-size: 28px;
+      }
+    }
+  }
+  .wishlist:hover {
+    color: #E34D38;
+  }
+  .wishlist {
+    position: absolute;
+    bottom: 20px;
+    left: 25px;
+    color: #adadad;
+    transition: .4s linear;
+  }
+  .wishlist:after {
+    content: "\2764";
+    display: inline-block;
+    font-size: 40px;
+  }
+
